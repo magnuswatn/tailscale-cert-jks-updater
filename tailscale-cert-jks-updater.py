@@ -13,7 +13,7 @@ from cryptography.hazmat.primitives import serialization
 
 class TailscaleClient:
     TAILSCALE_SOCKET = "/run/tailscale/tailscaled.sock"
-    TAILSCALE_CERT_URL = "http://./localapi/v0/cert/{}"
+    TAILSCALE_CERT_URL = "http://local-tailscaled.sock/localapi/v0/cert/{}"
     TIMEOUT = 600.0  # initial cert retrival can take a while
 
     def __init__(self, client: httpx.Client, url: str):
